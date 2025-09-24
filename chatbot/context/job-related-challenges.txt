@@ -1,0 +1,7 @@
+Challenge at Beans.ai:
+During my internship at Beans.ai, I worked on improving an object detection model that rates delivery personnel’s photos for companies like Instacart, FedEx, and Uber Eats. I designed an automated feedback loop that took customer reactions, filtered out invalid responses, and sent potentially misclassified images for agent review without requiring agents to access Google Cloud directly. The pipeline automatically uploaded images to GCS, labeled them in Label Studio, and appended their JSON data for model retraining.
+A major challenge was ensuring this worked seamlessly with large datasets while preventing data corruption during file updates. I solved this by implementing a safe append process using temporary files and GCS object composition, which made the updates atomic. This system streamlined the model improvement cycle, reduced mislabeled data, and accelerated feedback-to-retraining time, improving the model’s accuracy and reliability.
+
+
+Challenge at Juniper Networks:
+I built a system to map over 22,000 OpenConfig paths to Junos CLI commands. Before my work, it took months of manual effort. I had to quickly learn networking concepts, apply AI concepts like Sentence Transformers and RAG, and design an approach that cut the process down to a few days. It was challenging to solve such a complex problem but it taught me how to learn fast, adapt, and deliver high-impact solutions.

@@ -1,0 +1,55 @@
+My Professional Experience
+
+[Current Roles]
+
+1. Research Assistant, University of Maryland (UMD)
+    Duration: February 2025 - Present
+    Key Achievements:
+        - Placed 1st in the FinRL Leaderboard Competition (Task 3); co-authored a peer-reviewed IEEE IDS 2025 paper.
+        - Fine-tuned language models (Qwen2.5 and DeepSeek-R1 1.5B) using SFT, DPO, and RL on 20+ financial NLP datasets.
+
+2. Teaching Assistant, University of Maryland (UMD)
+    Duration: January 2024 - Present
+    Responsibilities:
+        - Lead lab sessions on Data Structures and Computer Systems for 36 students, providing hands-on guidance and fostering problem-solving skills.
+        - Assist students with debugging code, project guidance, and clarifying complex concepts, ensuring a solid understanding of course material.
+        - Evaluate projects, quizzes, and exams with accurate and consistent grading, maintaining fairness and academic integrity.
+
+3. Information Technology Manager, Sitare Foundation
+    Duration: February 2023 - Present
+    Responsibilities:
+        - Serve as the webmaster, overseeing the organization’s website and Google Workspace for 500+ members.
+        - Secure hundreds of student tablets using MDM software, ensuring safe and controlled device usage.
+        - Streamline operations by automating tasks such as bulk email creation, report card generation, and mass email/SMS distribution, improving efficiency.
+        - Manage attendance tracking by processing Zoom logs, ensuring accurate record-keeping for students and staff.
+
+
+
+[Internship Experience - Software Engineer Intern]
+
+4. HPE Juniper Networking
+    Duration: May 2025 - August 2025
+    Key Project and impact:
+        - Built an automated pipeline mapping 22K+ OpenConfig paths to Junos CLI commands using Sentence Transformer and RAG,
+        expanding coverage by 40x.
+        - Reduced manual validation time from months to under 2 days, accelerating network test workflows.
+
+5. Beans.ai
+    Duration: July 2024 - August 2024
+    Key Project and impact:
+        - Improved the accuracy of the AI model (by 12%) used for package services, addressing object detection issues.
+        - Designed and implemented a system to validate the model’s predictions, ensuring continuous performance improvement.
+        - Automated the process of updating datasets in Google Cloud Storage, reducing manual effort and improving efficiency.
+
+6. KlearNow.ai
+    Duration: June 2023 - August 2023
+    Key Project and impact:
+        - Improved system efficiency by 80% by migrating the database to a Docker-containerized local environment, reducing reliance on remote database access, improving query execution time, and enhancing overall system performance.
+        - Contributed to API development using OpenAPI YAML and Stoplight, ensuring structured and well-documented APIs.
+
+
+7. InterviewCamp
+    Duration: May 2021 - June 2021
+    Key Project and impact:
+        - Developed a live map tool that displays all tech companies currently hiring by processing big data.
+        - With over 5,000 Interview Camp students currently using this tool, they can find job opportunities at tech companies.
