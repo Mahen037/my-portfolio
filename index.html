@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahendra Kumar</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">MK</div>
+                <span class="logo-text">Mahendra Kumar</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#coursework">Coursework</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-video-wrapper">
+                <video class="hero-video" autoplay muted loop>
+                    <source src="static/Mahendra_BGVideo.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="hero-particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Hello, I'm<br>
+                    <span class="name">Mahendra Kumar</span><br>
+                    <span class="education-text">Senior at <span class="university">University of Maryland, College Park</span></span>
+                </h1>
+                <p class="hero-description">
+                    Intern '25 @ HPE Juniper Networking | CS + Stats | First-Gen
+                </p>
+                <div class="hero-buttons">
+                    <a href="/static/mahendra-resume.pdf?v=1" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-user-friends"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-icon">
+        <button class="chatbot-btn">
+            <i class="fas fa-comments"></i>
+            <span>Ask me anything</span>
+        </button>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="chat-modal">
+        <div class="chat-modal-content">
+            <div class="chat-header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <div class="avatar-container">
+                            <div class="avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="online-indicator"></div>
+                        </div>
+                        <div class="header-text">
+                            <h3>Mahendra's AI Assistant</h3>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <button class="close-chat-btn" onclick="closeChat()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="message-content">
+                        <div class="welcome-text">
+                            <h4>Hi there! 👋</h4>
+                            <p>Feel free to ask me anything about my background, experience, projects, or skills!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <form class="chat-form" id="chatForm">
+                        <div class="input-container">
+                            <textarea id="chatInput" placeholder="Ask me anything about Mahendra..." autocomplete="on"></textarea>
+                        </div>
+                        <button type="submit" class="send-btn" id="sendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="input-footer">
+                        <div class="typing-hint">Press Enter to send</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I grew up in Barmer, Rajasthan, where access to technology and education was limited, and those early challenges shaped my belief that <span class="highlight">curiosity can overcome circumstance</span>. Despite these challenges, I was fortunate to receive the <span class="highlight">Swami Vivekananda Scholarship</span> for my bachelor’s and to be selected by an <span class="highlight">NGO program</span> that provided access to quality high school education - an opportunity that transformed my path. Today, I am a first-generation Computer Science student at the University of Maryland, College Park, gaining experience in Java, Python, cloud platforms, machine learning, and deep learning. Guided by my roots and curiosity, these experiences fuel my passion for building scalable, real-world solutions for <span class="highlight">social good</span>.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Info & Skills Section -->
+    <section class="info-skills">
+        <div class="info-skills-container">
+            <div class="info-card">
+                <h3>Personal Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Senior</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>College Park, Maryland</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Expected Graduation: May 2026</span>
+                </div>
+                
+                <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: #333;">What I'm Looking For</h4>
+                <p style="color: #333; line-height: 1.6;">
+                    I'm actively seeking full-time opportunities in software engineering, full-stack development, data scientist, or related roles where I can contribute to meaningful projects, learn from experienced teams, and grow both professionally and personally.
+                </p>
+            </div>
+            
+            <div class="skills-card">
+                <h3>Technical Skills</h3>
+                
+                <div class="tech-category">
+                  <h5>Programming Languages</h5>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">C</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Assembly</span>
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Go</span>
+                    <span class="tech-tag">R</span>
+                  </div>
+                </div>
+              
+                <div class="tech-category">
+                  <h5>Backend & Databases</h5>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">MySQL</span>
+                  </div>
+                </div>
+              
+                <div class="tech-category">
+                  <h5>Machine Learning / Data Science</h5>
+                  <div class="tech-tags">
+                    <span class="tech-tag">pandas</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">scikit-learn</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">SAS</span>
+                    <span class="tech-tag">MATLAB</span>
+                    <span class="tech-tag">CUDA</span>
+                  </div>
+                </div>
+              
+                <div class="tech-category">
+                  <h5>Cloud & DevOps</h5>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Git</span>
+                    <span class="tech-tag">GitHub</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">GCP</span>
+                    <span class="tech-tag">Postman</span>
+                    <span class="tech-tag">Jira</span>
+                  </div>
+                </div>
+              
+                <div class="tech-category">
+                  <h5>Frontend</h5>
+                  <div class="tech-tags">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Bootstrap</span>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+    </section>
+
+    <!-- Relevant Coursework Section -->
+    <section id="coursework" class="coursework">
+        <div class="container">
+            <h2 class="section-title">Relevant <span class="highlight">Coursework</span></h2>
+            <div class="coursework-grid">
+                <div class="coursework-card">
+                    <div class="card-header-pill">
+                        <span>🧱</span>
+                        <span>Computer Science Fundamentals</span>
+                    </div>
+                    <div class="course-buttons">
+                        <span class="course-btn">Data Structures</span>
+                        <span class="course-btn">Web Development</span>
+                        <span class="course-btn">Computer Systems</span>
+                        <span class="course-btn">Discrete Structures</span>
+                        <span class="course-btn">Algorithms</span>
+                    </div>
+                </div>
+                
+                <div class="coursework-card">
+                    <div class="card-header-pill">
+                        <span>🧠</span>
+                        <span>AI & Machine Learning</span>
+                    </div>
+                    <div class="course-buttons">
+                        <span class="course-btn">Data Science</span>
+                        <span class="course-btn">Artificial Intelligence</span>
+                        <span class="course-btn">Machine Learning</span>
+                        <span class="course-btn">Multimodal Deep Learning</span>
+                        <span class="course-btn">Capstone in ML</span>
+                    </div>
+                </div>
+                
+                <div class="coursework-card">
+                    <div class="card-header-pill">
+                        <span>🧮 </span>
+                        <span>Mathematical & Computational Foundations</span>
+                    </div>
+                    <div class="course-buttons">
+                        <span class="course-btn">Multivariable Calculus</span>
+                        <span class="course-btn">Linear Algebra</span>
+                        <span class="course-btn">Probability & Statistics</span>
+                        <span class="course-btn">Sampling Theory</span>
+                        <span class="course-btn">Statistical Computing</span>
+                        <span class="course-btn">Parallel Computing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+            <div class="experience-intro">
+                <p>My professional journey includes internships, research, and teaching roles that have shaped my skills and passion for software development.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineering Intern</h3>
+                        <div class="timeline-details">
+                            <i class="fas fa-briefcase"></i>
+                            <span>HPE Juniper Networking</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sunnyvale, CA</span>
+                            <i class="fas fa-calendar"></i>
+                            <span>May 2025 - Aug 2025</span>
+                        </div>
+                        <div class="tech-section">
+                            <div class="tech-tags-small">
+                                <span class="tech-tag-small">Junos OS</span>
+                                <span class="tech-tag-small">LLM</span>
+                                <span class="tech-tag-small">Sentence Transformer</span>
+                                <span class="tech-tag-small">Retrieval-Augmented Generation (RAG)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="achievements-section">
+                            <h4><i class="fas fa-lightbulb"></i> Key Achievements</h4>
+                            <ul class="achievements-list">
+                                <li>Built an automated pipeline mapping OpenConfig paths to Junos CLI commands using Sentence Transformer and RAG,
+                                    expanding coverage from 53 to 22K+.</li>
+                                <li>Reduced manual validation time from months to under a few days, accelerating network test workflows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Undergraduate Research Assistant</h3>
+                        <div class="timeline-details">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Department of Computer Science, UMD</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>College Park, MD</span>
+                            <i class="fas fa-calendar"></i>
+                            <span>Feb 2025 - Present</span>
+                        </div>
+                        <p>Working on machine learning research projects focusing on natural language processing and data analysis.</p>
+                        
+                        <div class="tech-section">
+                            <div class="tech-tags-small">
+                                <span class="tech-tag-small">LLM</span>
+                                <span class="tech-tag-small">Direct Preference Optimization (DPO)</span>
+                                <span class="tech-tag-small">Reinforcement Learning (RL)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="achievements-section">
+                            <h4><i class="fas fa-lightbulb"></i> Key Achievements</h4>
+                            <ul class="achievements-list">
+                                <li>Placed 1st in the FinRL Leaderboard Competition (Task 3); co-authored a peer-reviewed IEEE IDS 2025 paper.</li>
+                                <li>Fine-tuned Qwen2.5 and DeepSeek-R1 1.5B using Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Reinforcement Learning (RL) on 20+ financial NLP datasets.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineering Intern</h3>
+                        <div class="timeline-details">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Beans.ai</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Palo Alto, CA</span>
+                            <i class="fas fa-calendar"></i>
+                            <span>July - Aug 2024</span>
+                        </div>
+                        <div class="tech-section">
+                            <div class="tech-tags-small">
+                                <span class="tech-tag-small">Python</span>
+                                <span class="tech-tag-small">Data Analysis</span>
+                                <span class="tech-tag-small">Google Cloud Storage</span>
+                                <span class="tech-tag-small">Vertex AI</span>
+                            </div>
+                        </div>
+                        
+                        <div class="achievements-section">
+                            <h4><i class="fas fa-lightbulb"></i> Key Achievements</h4>
+                            <ul class="achievements-list">
+                                <li>Improved the accuracy of the AI model used for package services, addressing object detection issues.</li>
+                                <li>Designed and implemented a system to validate the model’s predictions, ensuring continuous performance improvement.</li>
+                                <li>Automated the process of updating datasets in Google Cloud Storage, reducing manual effort and improving efficiency.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineering Intern</h3>
+                        <div class="timeline-details">
+                            <i class="fas fa-briefcase"></i>
+                            <span>KlearNow.AI</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Santa Clara, CA</span>
+                            <i class="fas fa-calendar"></i>
+                            <span>June 2023 - Aug 2023</span>
+                        </div>
+                        <div class="tech-section">
+                            <div class="tech-tags-small">
+                                <span class="tech-tag-small">Java</span>
+                                <span class="tech-tag-small">Go</span>
+                                <span class="tech-tag-small">Git</span>
+                                <span class="tech-tag-small">GitHub</span>
+                                <span class="tech-tag-small">Docker</span>
+                            </div>
+                        </div>
+                        
+                        <div class="achievements-section">
+                            <h4><i class="fas fa-lightbulb"></i> Key Achievements</h4>
+                            <ul class="achievements-list">
+                                <li>Improved system efficiency by 80% by migrating the database to a Docker-containerized local environment, reducing reliance on remote database access, improving query execution time, and enhancing overall system performance.</li>
+                                <li>Contributed to API development using OpenAPI YAML and Stoplight, ensuring structured and well-documented APIs.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Undergraduate Teaching Assistant</h3>
+                    <div class="timeline-details">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Department of Computer Science, UMD</span>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>College Park, MD</span>
+                        <i class="fas fa-calendar"></i>
+                        <span>Jan 2024 - Present</span>
+                    </div>
+                    <p>Assisted professors in teaching computer science courses and helped students with programming assignments.</p>
+                    
+                    <div class="tech-section">
+                        <div class="tech-tags-small">
+                            <span class="tech-tag-small">Data Structures</span>
+                            <span class="tech-tag-small">Debugging</span>
+                            <span class="tech-tag-small">Java</span>
+                            <span class="tech-tag-small">Assembly</span>
+                            <span class="tech-tag-small">C</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievements-section">
+                        <h4><i class="fas fa-lightbulb"></i> Key Achievements</h4>
+                        <ul class="achievements-list">
+                            <li>Lead lab sessions on Data Structures and Computer Systems for 36 students, providing hands-on guidance and fostering problem-solving skills.</li>
+                            <li>Assist students with debugging code, project guidance, and clarifying complex concepts, ensuring a solid understanding of course material.</li>
+                            <li>Evaluate projects, quizzes, and exams with accurate and consistent grading, maintaining fairness and academic integrity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Information Technology Specialist</h3>
+                    <div class="timeline-details">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Sitare Foundation</span>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Palo Alto, CA</span>
+                        <i class="fas fa-calendar"></i>
+                        <span>Feb 2023 - May 2025</span>
+                    </div>
+                    <div class="tech-section">
+                        <div class="tech-tags-small">
+                            <span class="tech-tag-small">Python</span>
+                            <span class="tech-tag-small">cPanel</span>
+                            <span class="tech-tag-small">Autocrat</span>
+                            <span class="tech-tag-small">GSuite</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievements-section">
+                        <h4><i class="fas fa-lightbulb"></i> Key Achievements</h4>
+                        <ul class="achievements-list">
+                            <li>Serve as the webmaster, overseeing the organization’s website and Google Workspace for 500+ members.</li>
+                            <li>Secure hundreds of student tablets using MDM software, ensuring safe and controlled device usage.</li>
+                            <li>Streamline operations by automating tasks such as bulk email creation, report card generation, and mass email/SMS distribution, improving efficiency.</li>
+                            <li>Manage attendance tracking by processing Zoom logs, ensuring accurate record-keeping for students and staff.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="projects-header">
+            <h2> Featured <span class="highlight">Projects</span></h2>
+            <p>A collection of projects that showcase my skills in full-stack development, machine learning, and creating user-centric applications.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-code"></i>
+                    <div class="project-icons">
+                        <i class="fas fa-external-link-alt"></i>
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>GPU-Accelerated Game of Life</h3>
+                    <p>A high-performance parallel implementation of Conway’s Game of Life using CUDA and GPU to speedups on large grids.</p>
+                    <div class="project-tech">
+                        <span>C++</span>
+                        <span>GPU</span>
+                        <span>CUDA</span>
+                    </div>
+                    <div class="features-section">
+                        <h4><i class="fas fa-key"></i> Key Features</h4>
+                        <ul class="features-list">
+                            <li>Implemented workload striding across threads/blocks for scalability and maximizing efficiency.</li>
+                            <li>Optimized Conway’s Game of Life using GPU parallelism, achieving 10x faster runtime on large grids.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-code"></i>
+                    <div class="project-icons">
+                        <i class="fas fa-external-link-alt"></i>
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>MicroCaml Interpreter</h3>
+                    <p>An interpreter for a subset of OCaml, featuring runtime type-checking, lexical analysis, parsing, and AST evaluation.</p>
+                    <div class="project-tech">
+                        <span>OCaml</span>
+                        <span>Git</span>
+                        <span>Regex</span>
+                    </div>
+                    <div class="features-section">
+                        <h4><i class="fas fa-key"></i> Key Features</h4>
+                        <ul class="features-list">
+                            <li>Built a dynamically typed OCaml subset with runtime type-checking.</li>
+                            <li>Developed Lexer, Parser, and Interpreter for AST generation and evaluation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-more-btn">
+            <a href="https://github.com/Mahen037?tab=repositories" class="btn" target="_blank">
+                <i class="fab fa-github"></i>
+                View More on GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Certifications and Awards Section -->
+    <section id="certifications" class="certifications">
+        <div class="certifications-container">
+            <h3>Certificates & Awards</h3>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <h4>Machine Learning</h4>
+                    <div class="certification-org">DeepLearning.AI</div>
+                    <div class="certification-year">2025</div>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/L20MWCNL18KY" class="certification-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="certification-item">
+                    <h4>Dean’s List (6x)</h4>
+                    <div class="certification-org">University of Maryland, College Park</div>
+                    <div class="certification-year">2022 - 2025</div>
+                    <a href="#" class="certification-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="certification-item">
+                    <h4>Sitare Foundation Scholarship</h4>
+                    <div class="certification-org">Six-year scholarship providing full tuition for middle and high school to a high-potential underprivileged student.</div>
+                    <div class="certification-year">2016 - 2022</div>
+                    <a href="#" class="certification-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="certification-item">
+                    <h4>Swami Vivekananda Scholarship</h4>
+                    <div class="certification-org">Full college scholarship awarded for academic excellence to an economically disadvantaged student.</div>
+                    <div class="certification-year">2022 - Present</div>
+                    <a href="#" class="certification-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-header">
+            <h2>Get In <span class="highlight">Touch</span></h2>
+            <p>Whether you have a project in mind, want to discuss opportunities, or just want to connect, I'd love to hear from you. Let's create something amazing together!</p>
+        </div>
+        
+        <div class="contact-main">
+            <div class="contact-info-card">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-label-value">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">
+                                <a href="mailto:mahendrasolanki11185482@gmail.com" style="color: inherit; text-decoration: none;">
+                                    mahendrasolanki11185482@gmail.com
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-label-value">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">
+                                <a href="tel:+16506096397" style="color: inherit; text-decoration: none;">
+                                    +1 (650) 609-6397
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-label-value">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">
+                                <a href="https://www.google.com/maps?q=College+Park,+Maryland" style="color: inherit; text-decoration: none;" target="_blank">
+                                    College Park, Maryland
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connect-section">
+                    <h4>Connect With Me</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/mahen037/" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Mahen037" class="social-icon" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="availability-section">
+                    <h4>Currently Available For:</h4>
+                    <ul class="availability-list">
+                        <li>Full-time Software Engineering/ML positions</li>
+                        <li>Internship opportunities (Fall 2025 & Spring 2026)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="contact-form-card">
+                <h3>Send Me a Message</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project, opportunity, or just say hello!" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mahendra Kumar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="/static/script.js"></script>
+</html> 

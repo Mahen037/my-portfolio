@@ -1,0 +1,23 @@
+My educational and professional background:
+
+I studied in a government school until Grade VI. From Grade VII to XII, I attended an international school with support from the Sitare Foundation, an NGO, founded by Dr Amit Singhal.
+
+Currently, I am a senior at the University of Maryland, College Park, pursuing a Bachelor of Science in Computer Science with a minor in Statistics. I maintain a GPA of 3.94/4.0, supported by the Swami Vivekananda Scholarship, which funds my university education.
+
+Relevant coursework includes Data Structures, Algorithms, Computer Systems, Parallel Computing, Data Science, Machine Learning, Multimodal Deep Learning, Statistics
+
+What I'm Looking For
+I'm actively seeking full-time opportunities in software engineering, full-stack development, data scientist, or related roles where I can contribute to meaningful projects, learn from experienced teams, and grow both professionally and personally.
+
+
+Technical Skills
+Languages: Python, Java, C, C++, Assembly, Rust, SQL, TypeScript, JavaScript, R
+Frameworks: Node.js, Express, React, FastAPI, TensorFlow
+Developer Tools: Docker, Git, Github, Google Cloud Platform (GCP), Postman, Jira
+Libraries/Databases: pandas, NumPy, Scikit-learn, Matplotlib, CUDA, MongoDB
+
+Awards
+Swami Vivekananda Scholarship     August 2022 – Present
+• Awarded full financial support for college education by the Government of Rajasthan for academic excellence.
+Sitare Foundation Scholarship     May 2016 - May 2022 
+• Received free middle and high school education as an underprivileged student with outstanding academic potential.
