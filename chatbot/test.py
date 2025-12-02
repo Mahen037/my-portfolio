@@ -2,13 +2,16 @@ import os
 from dotenv import load_dotenv
 load_dotenv("chatbot/.env")
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader, PyPDFLoader
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.prompts import PromptTemplate
+from langchain.schema.runnable import RunnablePassthrough
+from langchain.schema.output_parser import StrOutputParser
 import time
+import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from huggingface_hub import InferenceClient
+from langchain_huggingface import HuggingFaceEndpoint
 
 
 
@@ -40,7 +43,7 @@ class Chatbot:
             model_name="sentence-transformers/multi-qa-distilbert-cos-v1",
             model_kwargs={
                 'device': 'cpu',
-                'token': os.getenv('HUGGINGFACEHUB_API_TOKEN')
+                'token': os.getenv('HUGGINGFACE_API_KEY')
             }
         )
 
@@ -50,15 +53,17 @@ class Chatbot:
         
         print("🤖 Initializing AI model...")
         # Define the repo ID and connect to Mixtral model on Huggingface
-        repo_id = "meta-llama/Llama-3.1-8B-Instruct"
+        repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
         # # low-level HF client for chat_completion
         # self.llm = InferenceClient(
         #     repo_id,
         #     token=os.getenv("HUGGINGFACE_API_KEY")
         # )
-        self.llm = InferenceClient(
-            "meta-llama/Llama-3.1-8B-Instruct",
-            token=os.getenv("HUGGINGFACEHUB_API_TOKEN")
+        self.llm = HuggingFaceEndpoint(
+            repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
+            temperature=0.4,
+            max_new_tokens=100,
+            huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_API_TOKEN")
         )
 
 
@@ -142,16 +147,11 @@ Please provide a refined answer that:
                 #     temperature=0.4,  # Slightly higher for natural responses
                 #     top_p=0.95
                 # )
-                response = self.llm.chat_completion(
-                    messages=[{"role": "user", "content": prompt_text}],
-                    max_tokens=200,
-                    temperature=0.4
-                )
-                return response.choices[0].message["content"]
+                response = self.llm(prompt_text)
+                # answer = response.choices[0].message["content"]
+                return answer.strip()
             except Exception as e:
                 print(f"❌ AI API Error: {e}")
-                import traceback
-                traceback.print_exc()
                 return "I'm having trouble connecting to my AI service right now. Please try again in a moment."
 
         self.prompt = prompt
@@ -216,7 +216,7 @@ Please provide a refined answer that:
             conv_history = "\n".join(self.conversation_history[-6:])  # Last 6 messages
             
             # Create the prompt with context
-            context_docs = self.docsearch.as_retriever().invoke(user_message)
+            context_docs = self.docsearch.as_retriever().get_relevant_documents(user_message)
             context_text = "\n\n".join([doc.page_content for doc in context_docs])
 
             prompt_text = self.prompt.format(

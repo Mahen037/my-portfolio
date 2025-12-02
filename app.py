@@ -12,6 +12,7 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 import sys
 from chatbot.chat import Chatbot
+import threading
 
 
 # Add chatbot directory to path
@@ -50,13 +51,19 @@ chatbot_instance = None
 
 @app.on_event("startup")
 async def startup_event():
-    global chatbot_instance
-    """Get or create chatbot instance"""
-    if chatbot_instance is None:
-        try:
-            chatbot_instance = Chatbot()
-        except Exception as e:
-            print(f"Error initializing chatbot: {e}")
+    def init_chatbot():
+        global chatbot_instance
+        """Get or create chatbot instance"""
+        if chatbot_instance is None:
+            try:
+                chatbot_instance = Chatbot()
+            except Exception as e:
+                print(f"Error initializing chatbot: {e}")
+
+    # Start initialization in a separate thread (non-blocking)
+    thread = threading.Thread(target=init_chatbot)
+    thread.daemon = True
+    thread.start()
 
 def get_chatbot():
     if chatbot_instance is None:
