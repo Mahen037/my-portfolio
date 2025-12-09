@@ -106,119 +106,14 @@ document.getElementById('contactForm').addEventListener('submit', async function
 });
 
 
-// Chatbot functionality
-function openChat() {
-    document.getElementById('chatModal').style.display = 'block';
-    setTimeout(() => {
-        document.getElementById('chatInput').focus();
-    }, 300);
-}
+// Chatbot UI disabled (backend still available). All chat handlers are no-ops to avoid runtime errors.
+function openChat() {}
+function closeChat() {}
+function addMessage() {}
+function showTyping() {}
+function hideTyping() {}
+async function sendMessage() { return null; }
 
-function closeChat() {
-    document.getElementById('chatModal').style.display = 'none';
-}
-
-function addMessage(content, isUser = false) {
-    const chatMessages = document.getElementById('chatMessages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-    
-    messageDiv.innerHTML = `
-        <div class="message-content">
-            <i class="fas ${isUser ? 'fa-user' : 'fa-robot'}"></i>
-            <p>${content}</p>
-        </div>
-    `;
-    
-    chatMessages.appendChild(messageDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function showTyping() {
-    const chatMessages = document.getElementById('chatMessages');
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'typing-indicator';
-    typingDiv.id = 'typingIndicator';
-    typingDiv.innerHTML = `
-        <i class="fas fa-robot"></i>
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-    `;
-    chatMessages.appendChild(typingDiv);
-}
-
-
-function hideTyping() {
-    const typingIndicator = document.getElementById('typingIndicator');
-    if (typingIndicator) {
-        typingIndicator.remove();
-    }
-}
-
-
-async function sendMessage() {
-    const chatInput = document.getElementById('chatInput');
-    const message = chatInput.value.trim();
-    console.log('Message:', message);
-    
-    if (!message) return;
-    
-    // Add user message to chat
-    addMessage(message, true);
-    chatInput.value = '';
-    
-    // Show typing indicator
-    showTyping();
-    
-    try {
-        const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message: message })
-        });
-        
-        const result = await response.json();
-        console.log('Result:', result);
-        // Hide typing indicator
-        hideTyping();
-        
-        // Add bot response
-        addMessage(result.response, false);
-        console.log('Bot response:', result.response);
-    } catch (error) {
-        hideTyping();
-        addMessage("Sorry, I'm having trouble connecting right now. Please try again.", false);
-        console.error('Chat error:', error);
-    }
-}
-
-// Event listeners for chatbot
 document.addEventListener('DOMContentLoaded', function() {
-    // Chatbot button click
-    document.querySelector('.chatbot-icon').addEventListener('click', openChat);
-    
-    // Chat form submission
-    document.getElementById('chatForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        sendMessage();
-    });
-    
-    // Enter key to send message
-    document.getElementById('chatInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
-            console.log('Enter key pressed');
-            sendMessage();
-        }
-    });
-    
-    // Close modal when clicking outside
-    document.getElementById('chatModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeChat();
-        }
-    });
+    // Chat UI disabled: no event bindings.
 });
