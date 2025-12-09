@@ -157,36 +157,6 @@ function hideTyping() {
 }
 
 
-let chatWarmPromise = null;
-
-async function warmChatbot() {
-    if (chatWarmPromise) return chatWarmPromise;
-    chatWarmPromise = (async () => {
-        try {
-            await fetch('/api/chat', { method: 'GET' });
-        } catch (err) {
-            console.warn('Chat warmup failed:', err);
-            chatWarmPromise = null; // allow retry later
-        }
-    })();
-    return chatWarmPromise;
-}
-
-async function postChatMessage(message) {
-    const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message })
-    });
-    const result = await response.json();
-    if (!response.ok || result.success === false) {
-        throw new Error(result.response || 'Chat request failed');
-    }
-    return result;
-}
-
 async function sendMessage() {
     const chatInput = document.getElementById('chatInput');
     const message = chatInput.value.trim();
@@ -202,15 +172,15 @@ async function sendMessage() {
     showTyping();
     
     try {
-        await warmChatbot();
-        let result;
-        try {
-            result = await postChatMessage(message);
-        } catch (firstError) {
-            console.warn('Chat first attempt failed, retrying once:', firstError);
-            await warmChatbot();
-            result = await postChatMessage(message);
-        }
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: message })
+        });
+        
+        const result = await response.json();
         console.log('Result:', result);
         // Hide typing indicator
         hideTyping();
@@ -227,7 +197,6 @@ async function sendMessage() {
 
 // Event listeners for chatbot
 document.addEventListener('DOMContentLoaded', function() {
-    warmChatbot(); // pre-warm backend on page load
     // Chatbot button click
     document.querySelector('.chatbot-icon').addEventListener('click', openChat);
     

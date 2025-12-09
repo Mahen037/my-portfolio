@@ -1,30 +1,10 @@
-# FastAPI dependencies
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-python-multipart==0.0.6
-
-# LangChain dependencies - minimal set
-langchain
-langchain-community
-langchain-huggingface
-
-# ML/AI dependencies - only what's used
-sentence-transformers
-transformers
-torch
+# Lightweight and supported on Vercel
 huggingface-hub
-scikit-learn
-numpy
-
-# Vector database
-faiss-cpu
-
-# Environment and utilities
 python-dotenv
-pydantic[email]
+requests
 
-# Email functionality
+# Email validation libraries
 email-validator
 
-# File handling - only if you use PDFs
-pypdf
+# Pydantic (light dependency)
+pydantic
